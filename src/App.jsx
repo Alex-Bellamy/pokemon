@@ -1,6 +1,14 @@
 import React, { Component } from "react";
 
 class App extends Component {
+state = {
+  searchTerm: [],
+}
+
+onChange = (e) => {
+  this.setState({ searchTerm: e.target.value });
+  }
+
   render() {
     return (
       <div>
@@ -9,7 +17,7 @@ class App extends Component {
         <form>
           <input
             id="search"
-            placeholder="genderless, male or female"
+            placeholder="genderless, male or female" value={this.state.searchTerm} onChange={this.onChange}
           />
           <button id="find">Find</button>
         </form>
